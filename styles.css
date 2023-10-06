@@ -1,34 +1,26 @@
-/* Reset some default styles for better consistency */
-* {
+*{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-.quiz-container {
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    max-width: 600px;
+header{
+    background-color: black;
+    color: white;
+    font-size: 45px;
     padding: 20px;
+    height: 50px;
     text-align: center;
 }
 
-h1 {
-    color: #007BFF;
-    font-size: 28px;
-    margin-bottom: 20px;
+.quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 50px;
 }
 
 .question-container {
@@ -37,28 +29,46 @@ h1 {
 
 .options button {
     display: block;
-    margin: 10px auto;
-    padding: 12px 24px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
+    margin: 5px auto;
+    padding: 10px 20px;
+    background-color: #080808;
+    border: 1px solid #ddd;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s, color 0.3s;
-    font-size: 16px;
 }
 
 .options button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+    background-color: #070707;
 }
 
-.options button:active {
-    background-color: #004dab;
-}
-
-/* Change the background color when option is selected */
 .options button.selected {
     background-color: #28a745;
     color: #fff;
+}
+
+.feedback-container {
+    margin-bottom: 20px;
+}
+
+#feedback {
+    font-weight: bold;
+    color: #dc3545;
+}
+
+#timer {
+    font-weight: bold;
+    color: #007bff;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
 }
