@@ -1,3 +1,5 @@
+// quiz.js
+
 const questions = [
   {
     question: "What is JavaScript?",
@@ -112,9 +114,10 @@ function checkAnswer() {
   }
 
   showCorrectAnswer();
+  submitButton.style.display = "none";
+  nextButton.style.display = "block";
 }
 
-// move next qus
 function nextQuestion() {
   currentQuestion++;
   if (currentQuestion < questions.length) {
@@ -122,12 +125,11 @@ function nextQuestion() {
     feedbackElement.textContent = "";
     submitButton.style.display = "none";
     timerElement.style.display = "block";
+    nextButton.style.display = "none";
   } else {
     showResult();
   }
 }
-
-// display result
 
 function showResult() {
   clearInterval(timer);
@@ -140,21 +142,17 @@ function showResult() {
   restartButton.style.display = "block";
 }
 
-//Restart
-
 function restartQuiz() {
   currentQuestion = 0;
   score = 0;
   loadQuestion();
   feedbackElement.textContent = "";
   restartButton.style.display = "none";
-  submitButton.style.display = "none";
+  submitButton.style.display = "block";
   timerElement.style.display = "block";
 }
 
-// load
 loadQuestion();
 restartButton.addEventListener("click", restartQuiz);
 submitButton.addEventListener("click", checkAnswer);
-
 nextButton.addEventListener("click", nextQuestion);
